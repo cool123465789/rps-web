@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <title>1&1 BoGy U-Boot</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.3/jquery.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+
+
+</head>
+
+<body>
+<div class="container">
+    <div  ng-controller="myCtrl">
+        <h1 style="color: #009900;"><b><i><u>Schere, Stein, Papier!</u></i></b></h1>
+
+        <h2>Willkommen bei dem ersten INTERAKTIVEN <a href="http://www.1und1.de/" target="_blank"> 1&1 </a>
+            Prokjekt:
+            Schere, Stein, Papier </h2>
+        <p>Die <i>Spielregeln</i> sind ganz einfach...
+            W&aumlhle dein Zeichen, durch klicken, aus und besiege den KI.</p>
+
+
+
+
+        <div class="row" style="margin-bottom: 2em;">
+            <div class="col-xs-4 col-md-4">
+                <button class="btn btn-default" ng-click="drueckerli('Schere')" type="submit"><img
+                        style="width: auto; max-height: 8em;"
+                        src="https://pixabay.com/static/uploads/photo/2012/04/01/19/28/icon-24188_960_720.png"
+                        class="img-rounded ">
+                </button>
+            </div>
+            <div class="col-xs-4 col-md-4">
+                <button class="btn btn-default" ng-click="drueckerli('Stein')"  type="submit"><img
+                        style="width: auto; max-height: 8em;"
+                        src="https://www.overclockers.at/files/stein-sw_98247.gif"
+                        class="img-rounded "></button>
+            </div>
+            <div class="col-xs-4 col-md-4">
+                <button class="btn btn-default" ng-click="drueckerli('Papier')"  type="submit"><img
+                        style="width: auto; max-height: 8em;"
+                        src="http://cdn.idealo.com/folder/Product/2710/8/2710889/s1_produktbild_mid/sigel-dp235-motiv-papier-a4-90g-qm-50-blatt-motiv-pergament.jpg"
+                        class="img-rounded "/></button>
+            </div>
+        </div>
+
+        <img class="row" style="width: auto; max-height: 16em;"  src="{{ symbol.image }}" />
+        <p  ng-show="symbol" class="col-xs-8 col-md-8">Der KI w&auml;hlt: {{ symbol.name }}</p>
+
+<p> </p>
+        <p> {{meldung}} </p>
+        </div>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.8/angular.min.js"></script>
+<script src="js/rps-web.js"></script>
+
+</body>
+</html>
+
+
+
